@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DentedPixel;
 
 public class SpawnCars : MonoBehaviour
 {
     public List<CarsInfo> cars ;
+    public float spawnCooldown = 2.0f; // Cooldown duration in seconds
+    public float lastSpawnTime;
+    public GameObject bar;
 
     Rigidbody rb;
     float forwardForce;
+
+    
 
     GameObject car;
     public GameObject player1Button1SpawnLoc;
@@ -30,20 +36,23 @@ public class SpawnCars : MonoBehaviour
 
     
 
-    public bool isButtonPressed;
+    public static bool isButtonPressed;    
 
 
 
     void Start()
     {
+        
         RandomCarsPlayer1();
         ShowImage1();
+
     }
 
     
-    void FixedUpdate()
+    void Update()
     {
-        Movement();
+        
+
     }
 
     public void ShowImage1()
@@ -67,36 +76,37 @@ public class SpawnCars : MonoBehaviour
 
     public void SpawnGameObjectButton1()
     {
-      
-            car = Instantiate(cars[index].cars, player1Button1SpawnLoc.transform);
-            forwardForce = cars[index].force;
-            isButtonPressed = true;
-            SpawnManager();
+        if (Time.time - lastSpawnTime >= spawnCooldown){
+                car = Instantiate(cars[index].cars, player1Button1SpawnLoc.transform);
+                forwardForce = cars[index].force;
+                isButtonPressed = true;
+                lastSpawnTime = Time.time; // Update last spawn time
+                SpawnManager();
+        }
 
-
-       
-        
       
     }
 
     public void SpawnGameObjectButton2()
     {
-       
+        if (Time.time - lastSpawnTime >= spawnCooldown){
             car = Instantiate(cars[index].cars, player1Button2SpawnLoc.transform);
             forwardForce = cars[index].force;
             isButtonPressed = true;
+            lastSpawnTime = Time.time; // Update last spawn time
             SpawnManager();
+        }
         
 
     }
 
     public void SpawnGameObjectButton3()
     {
-        if (car != null)
-        {
+        if (Time.time - lastSpawnTime >= spawnCooldown){
             car = Instantiate(cars[index].cars, player1Button3SpawnLoc.transform);
             forwardForce = cars[index].force;
             isButtonPressed = true;
+            lastSpawnTime = Time.time; // Update last spawn time
             SpawnManager();
         }
 
@@ -104,33 +114,39 @@ public class SpawnCars : MonoBehaviour
 
     public void SpawnGameObjectButton4()
     {
-       
+        if (Time.time - lastSpawnTime >= spawnCooldown){
             car = Instantiate(cars[index].cars, player1Button4SpawnLoc.transform);
             forwardForce = cars[index].force;
             isButtonPressed = true;
+            lastSpawnTime = Time.time; // Update last spawn time
             SpawnManager();
+        }
        
 
     }
 
     public void SpawnGameObjectButton5()
     {
-        
+         if (Time.time - lastSpawnTime >= spawnCooldown){
             car = Instantiate(cars[index].cars, player1Button5SpawnLoc.transform);
             forwardForce = cars[index].force;
             isButtonPressed = true;
+            lastSpawnTime = Time.time; // Update last spawn time
             SpawnManager();
+         }
        
 
     }
 
     public void SpawnGameObjectButton6()
     {
-       
+        if (Time.time - lastSpawnTime >= spawnCooldown){
             car = Instantiate(cars[index].cars, player1Button6SpawnLoc.transform);
             forwardForce = cars[index].force;
             isButtonPressed = true;
+            lastSpawnTime = Time.time; // Update last spawn time
             SpawnManager();
+        }
      
 
     }
@@ -142,34 +158,25 @@ public class SpawnCars : MonoBehaviour
     {
         if(isButtonPressed == true)
         {
-           
-
             index = index1;
             index1 = index2;
             index2 = Random.Range(0, cars.Count);
-
+            ResetBarAnimation(); // Reset the bar animation
+            AnimateBar();
             ShowImage1();
-            
-
         }
+       
     }
 
-    public void Movement()
+    public void ResetBarAnimation()
     {
-        if (isButtonPressed == true)
-        {
-
-            rb = this.car.GetComponent<Rigidbody>();
-            rb.velocity = transform.TransformDirection(Vector3.right * forwardForce);
-           
-            
-        }
+        LeanTween.cancel(bar); // Cancel any ongoing animation on the bar GameObject
+        bar.transform.localScale = new Vector3(0f, 1f, 1f); // Reset the scale of the bar to its initial state
     }
-
-
-
-
-
-
+    
+    public void AnimateBar(){
+        LeanTween.scaleX(bar, 1, 2);
+    }
+   
 
 }

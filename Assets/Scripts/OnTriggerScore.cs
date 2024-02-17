@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class OnTriggerScore : MonoBehaviour
 {
-    public GameObject carOrig;
+
 
         void OnTriggerEnter(Collider other)
         {
-           
-            if (other.gameObject.tag == "Destroy")
-            {
-                GameObject carClone = Instantiate(carOrig);
-                Destroy(carClone);
-  
-                Debug.Log("Collided");
-                
-               
+
+            if (other.gameObject.tag == "Bus"){
+                ScoreScriptP1.instance.AddPointCar5();
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.tag == "Truck"){ 
+                ScoreScriptP1.instance.AddPointCar4();
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.tag == "Car"){ 
+                ScoreScriptP1.instance.AddPointCar23();
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.tag == "Tuktuk"){ 
+                ScoreScriptP1.instance.AddPointCar1();
+                Destroy(other.gameObject);
             }
         }
     

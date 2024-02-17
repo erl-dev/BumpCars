@@ -1,0 +1,4 @@
+#Mon Feb 12 21:58:05 CST 2024
+base.0=D\:\\Desktop\\GAME DEV\\BumpCars\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

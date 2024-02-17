@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Destroy
   - Car
+  - Bus
+  - Tuktuk
+  - Truck
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
