@@ -355,6 +355,7 @@
 "Assets/LeanTween/Testing/TestingSceneSwitching.cs"
 "Assets/LeanTween/Testing/TestingSequencer.cs"
 "Assets/Scripts/CarsInfo.cs"
+"Assets/Scripts/GameOverScript.cs"
 "Assets/Scripts/MovementScripts/MovementScriptBlueCar.cs"
 "Assets/Scripts/MovementScripts/MovementScriptBus.cs"
 "Assets/Scripts/MovementScripts/MovementScriptTruck.cs"

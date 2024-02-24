@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - GameOverScript
     - MovementScriptBlueCar
     - MovementScriptBus
     - MovementScriptTruck
@@ -8,6 +9,7 @@ ScriptsOnlyBuild:
     - MovementScriptYellowCar
     - OnTriggerScore
     - OnTriggerScoreP2
+    - PauseButtonScript
     - ScoreScriptP1
     - ScoreScriptP2
     - SpawnCars
@@ -76,6 +78,9 @@ ScriptsOnlyBuild:
     fullTypeName: SpawnCarsP2
     methodName: SpawnGameObjectButton3
   - assembly: Assembly-CSharp
+    fullTypeName: PauseButtonScript
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
     fullTypeName: SpawnCars
     methodName: SpawnGameObjectButton5
   - assembly: Assembly-CSharp
@@ -88,6 +93,9 @@ ScriptsOnlyBuild:
     fullTypeName: SpawnCars
     methodName: SpawnGameObjectButton4
   - assembly: Assembly-CSharp
+    fullTypeName: PauseButtonScript
+    methodName: PauseClicked
+  - assembly: Assembly-CSharp
     fullTypeName: SpawnCarsP2
     methodName: SpawnGameObjectButton2
   - assembly: Assembly-CSharp
@@ -99,6 +107,15 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: SpawnCars
     methodName: SpawnGameObjectButton6
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseButtonScript
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: GameOverScript
+    methodName: Restart
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseButtonScript
+    methodName: Restart
   - assembly: Assembly-CSharp
     fullTypeName: SpawnCarsP2
     methodName: SpawnGameObjectButton6
@@ -106,10 +123,13 @@ ScriptsOnlyBuild:
     fullTypeName: SpawnCars
     methodName: SpawnGameObjectButton3
   - assembly: Assembly-CSharp
+    fullTypeName: GameOverScript
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
     fullTypeName: SpawnCarsP2
     methodName: SpawnGameObjectButton5
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Game.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -157,39 +177,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17708}
     - Class: 114
-      Script: {instanceID: 17916}
+      Script: {instanceID: 17742}
     - Class: 114
-      Script: {instanceID: 18122}
+      Script: {instanceID: 17918}
     - Class: 114
-      Script: {instanceID: 18210}
+      Script: {instanceID: 18124}
     - Class: 114
-      Script: {instanceID: 18554}
+      Script: {instanceID: 18212}
     - Class: 114
-      Script: {instanceID: 18750}
+      Script: {instanceID: 18556}
     - Class: 114
-      Script: {instanceID: 18812}
+      Script: {instanceID: 18752}
     - Class: 114
-      Script: {instanceID: 18896}
+      Script: {instanceID: 18814}
     - Class: 114
-      Script: {instanceID: 19228}
+      Script: {instanceID: 18898}
     - Class: 114
-      Script: {instanceID: 19480}
+      Script: {instanceID: 19230}
     - Class: 114
-      Script: {instanceID: 20188}
+      Script: {instanceID: 19482}
     - Class: 114
-      Script: {instanceID: 20758}
+      Script: {instanceID: 20190}
     - Class: 114
-      Script: {instanceID: 20846}
+      Script: {instanceID: 20760}
     - Class: 114
-      Script: {instanceID: 20874}
+      Script: {instanceID: 20848}
     - Class: 114
-      Script: {instanceID: 20910}
+      Script: {instanceID: 20876}
     - Class: 114
-      Script: {instanceID: 21234}
+      Script: {instanceID: 20912}
     - Class: 114
-      Script: {instanceID: 21660}
+      Script: {instanceID: 21236}
     - Class: 114
-      Script: {instanceID: 22864}
+      Script: {instanceID: 21662}
+    - Class: 114
+      Script: {instanceID: 21854}
+    - Class: 114
+      Script: {instanceID: 22868}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -381,6 +405,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 915766b8e791be1deb8178a01fab92ce
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameOverScript
   - hash:
       serializedVersion: 2
       Hash: ada873da50974d1e7ce247ffb296b0f3
@@ -1181,6 +1211,12 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
+      Hash: e1d9c4c4814aa9df1772e0fe5656ec56
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PauseButtonScript
+  - hash:
+      serializedVersion: 2
       Hash: 6a0b5b415c00f783202fd1ae2d556cb2
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1359,13 +1395,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 1523f2b45aac2f6468f480127e796864
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PauseButtonScript
   platform: 13
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Desktop/GAME DEV/BumpCars/BumpCars-demov0.1.3.apk
+  - Assets/Scenes/Game.unity
+  playerPath: D:/Desktop/GAME DEV/BumpCars/BumpCars-demov0.1.4.apk
