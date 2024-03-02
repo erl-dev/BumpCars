@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GameOverScript
+    - MainMenuScript
     - MovementScriptBlueCar
     - MovementScriptBus
     - MovementScriptTruck
@@ -74,6 +75,18 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuScript
+    methodName: PlayerVsPlayer
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuScript
+    methodName: PlayGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuScript
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuScript
+    methodName: BackButtonClicked
   - assembly: Assembly-CSharp
     fullTypeName: SpawnCarsP2
     methodName: SpawnGameObjectButton3
@@ -148,8 +161,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 64
@@ -165,55 +176,110 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 16676}
+      Script: {instanceID: 16640}
     - Class: 114
-      Script: {instanceID: 16820}
+      Script: {instanceID: 16642}
     - Class: 114
-      Script: {instanceID: 16838}
+      Script: {instanceID: 16830}
     - Class: 114
-      Script: {instanceID: 17284}
+      Script: {instanceID: 16848}
     - Class: 114
-      Script: {instanceID: 17544}
+      Script: {instanceID: 17554}
     - Class: 114
-      Script: {instanceID: 17708}
+      Script: {instanceID: 17718}
     - Class: 114
-      Script: {instanceID: 17742}
+      Script: {instanceID: 17752}
     - Class: 114
-      Script: {instanceID: 17918}
+      Script: {instanceID: 17928}
     - Class: 114
-      Script: {instanceID: 18124}
+      Script: {instanceID: 18134}
     - Class: 114
-      Script: {instanceID: 18212}
+      Script: {instanceID: 18564}
     - Class: 114
-      Script: {instanceID: 18556}
+      Script: {instanceID: 18760}
     - Class: 114
-      Script: {instanceID: 18752}
+      Script: {instanceID: 18822}
     - Class: 114
-      Script: {instanceID: 18814}
+      Script: {instanceID: 18906}
     - Class: 114
-      Script: {instanceID: 18898}
+      Script: {instanceID: 20196}
     - Class: 114
-      Script: {instanceID: 19230}
+      Script: {instanceID: 20764}
     - Class: 114
-      Script: {instanceID: 19482}
+      Script: {instanceID: 20852}
     - Class: 114
-      Script: {instanceID: 20190}
+      Script: {instanceID: 20880}
     - Class: 114
-      Script: {instanceID: 20760}
+      Script: {instanceID: 20916}
     - Class: 114
-      Script: {instanceID: 20848}
+      Script: {instanceID: 21240}
     - Class: 114
-      Script: {instanceID: 20876}
+      Script: {instanceID: 21664}
     - Class: 114
-      Script: {instanceID: 20912}
-    - Class: 114
-      Script: {instanceID: 21236}
-    - Class: 114
-      Script: {instanceID: 21662}
-    - Class: 114
-      Script: {instanceID: 21854}
+      Script: {instanceID: 21856}
     - Class: 114
       Script: {instanceID: 22868}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 16640}
+    - Class: 114
+      Script: {instanceID: 16642}
+    - Class: 114
+      Script: {instanceID: 17294}
+    - Class: 114
+      Script: {instanceID: 17718}
+    - Class: 114
+      Script: {instanceID: 17928}
+    - Class: 114
+      Script: {instanceID: 19238}
+    - Class: 114
+      Script: {instanceID: 19490}
+    - Class: 114
+      Script: {instanceID: 20196}
+    - Class: 114
+      Script: {instanceID: 20764}
+    - Class: 114
+      Script: {instanceID: 21240}
+    - Class: 114
+      Script: {instanceID: 25644}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -233,16 +299,46 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 55060a7bf226ac385ce19ebd450f199f
+      Hash: 53e329840e6d03aebec76623c3b054db
     assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UIElements
-    className: PanelRaycaster
+    namespaceName: UnityEngine.UI
+    className: Slider
+  - hash:
+      serializedVersion: 2
+      Hash: a90f6a00b23520788be7d89ee3b0773d
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Scrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: 915204dac8acad99f076d6e72ada0a0f
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: dd9dda1dfd39e605c49e72003342ef5d
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: b5007673bbbdb9d12597a1d8201370f5
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: 5ebc58ec194dd44630b25fcc270ad4af
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 55060a7bf226ac385ce19ebd450f199f
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UIElements
+    className: PanelRaycaster
   - hash:
       serializedVersion: 2
       Hash: f45600bcc886206dd55a3208474aad61
@@ -525,12 +621,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ToggleGroup
-  - hash:
-      serializedVersion: 2
-      Hash: 915204dac8acad99f076d6e72ada0a0f
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: d90629714fa6b0145fcaffc87f5c6559
@@ -923,12 +1013,6 @@ ScriptsOnlyBuild:
     className: GlobalMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 53e329840e6d03aebec76623c3b054db
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
       Hash: 33f160a5c07e580c29aba2bd1e4db811
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -993,12 +1077,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDeselectMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: b5007673bbbdb9d12597a1d8201370f5
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Text
   - hash:
       serializedVersion: 2
       Hash: 1ce63d97d1ca25cba2d91d5f32fd5f79
@@ -1077,12 +1155,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: StandaloneInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: a90f6a00b23520788be7d89ee3b0773d
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Scrollbar
   - hash:
       serializedVersion: 2
       Hash: 13f262cc0741566a7ab72682984bc3e1
@@ -1253,12 +1325,6 @@ ScriptsOnlyBuild:
     className: UnityOnSubmitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 5ebc58ec194dd44630b25fcc270ad4af
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Dropdown
-  - hash:
-      serializedVersion: 2
       Hash: 4728e3d21cc2a12e391e71ec9b7eed0b
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1395,7 +1461,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 43af79c1c085dc4c23b56997fb0755ae
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MainMenuScript
   platform: 13
   scenePathNames:
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Game.unity
-  playerPath: D:/Desktop/GAME DEV/BumpCars/BumpCars-demov0.1.4.apk
+  playerPath: D:/Desktop/GAME DEV/BumpCars/BumpCars-demov0.1.5.apk
