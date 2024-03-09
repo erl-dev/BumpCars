@@ -45,9 +45,9 @@ public class GameOverScript : MonoBehaviour
         int scoreP2 = ScoreScriptP2.scoreP2;
 
         if (scoreP1 > scoreP2){
-            winnerText.text = "PLAYER 1 IS THE WINNER!!!";
+            winnerText.text = "PLAYER ONE IS THE WINNER!!!";
         } else if (scoreP2 > scoreP1){
-            winnerText.text = "PLAYER 2 IS THE WINNER!!!";
+            winnerText.text = "PLAYER TWO IS THE WINNER!!!";
         } else if (scoreP2 == scoreP1){
             winnerText.text = "IT'S A TIE GAME!!!";
         }

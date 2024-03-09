@@ -9,6 +9,9 @@ public class MovementScriptBus : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     bool isGrounded;
+    public GameObject smokeEffect;
+    int smokeCount = 0;
+
 
     Vector3 velocity;
 
@@ -27,6 +30,11 @@ public class MovementScriptBus : MonoBehaviour
             if(isGrounded){
 
                 rb.velocity = transform.TransformDirection(Vector3.forward * -14);
+                if(smokeCount == 0){
+                    FindObjectOfType<AudioManagerScript>().Play("SpeedingSound");
+                    GameObject effect = Instantiate(smokeEffect, transform.position, transform.rotation);
+                    smokeCount = 1;
+                }
                 
             }
             

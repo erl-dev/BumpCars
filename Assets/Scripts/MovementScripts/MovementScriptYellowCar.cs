@@ -9,6 +9,8 @@ public class MovementScriptYellowCar : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     bool isGrounded;
+    public GameObject smokeEffect;
+    int smokeCount = 0;
 
     Vector3 velocity;
 
@@ -21,17 +23,16 @@ public class MovementScriptYellowCar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
             rb = this.GetComponent<Rigidbody>();
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
             if(isGrounded){
 
                 rb.velocity = transform.TransformDirection(Vector3.forward * -10);
-                
-
-            }
-            
-             
-         
+                if(smokeCount == 0){
+                    FindObjectOfType<AudioManagerScript>().Play("SpeedingSound");
+                    GameObject effect = Instantiate(smokeEffect, transform.position, transform.rotation);
+                    smokeCount = 1;
+                }
+            }    
     } 
 }
