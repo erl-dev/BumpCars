@@ -32,6 +32,7 @@ public class MovementScriptYellowCar : MonoBehaviour
                     FindObjectOfType<AudioManagerScript>().Play("SpeedingSound");
                     GameObject effect = Instantiate(smokeEffect, transform.position, transform.rotation);
                     smokeCount = 1;
+                    Destroy(effect, 2f);
                 }
             }    
     } 
